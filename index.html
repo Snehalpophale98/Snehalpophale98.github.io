@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Snehal Pophale — Quantitative Analyst | Mathematics, Quantitative Finance, Risk & Data" />
+  <title>Snehal Pophale | Quantitative Analyst</title>
+
+  <style>
+    :root {
+      --bg: #080b12;
+      --surface: #0f141e;
+      --surface-2: #141b27;
+      --text: #eef2f7;
+      --muted: #9ba6b6;
+      --line: rgba(255,255,255,0.09);
+      --accent: #8ab4ff;
+      --accent-2: #b7cfff;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 85% 10%, rgba(94, 137, 255, 0.12), transparent 28%),
+        radial-gradient(circle at 10% 30%, rgba(130, 90, 255, 0.08), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(8,11,18,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 750;
+      letter-spacing: -0.03em;
+      font-size: 1.05rem;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    section { padding: 92px 0; }
+
+    .hero {
+      min-height: calc(100vh - 68px);
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.55fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(3.1rem, 8vw, 6.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      max-width: 850px;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero-subtitle {
+      margin-top: 28px;
+      max-width: 690px;
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      font-size: 0.92rem;
+      font-weight: 650;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: #090c12;
+      border-color: var(--text);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(138,180,255,0.55);
+    }
+
+    .hero-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018));
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.22);
+    }
+
+    .formula {
+      font-family: Georgia, serif;
+      font-size: 1.7rem;
+      color: var(--accent-2);
+      margin-bottom: 22px;
+    }
+
+    .stat {
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .stat strong { display: block; font-size: 1.03rem; }
+    .stat small { color: var(--muted); }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 750;
+      margin-bottom: 11px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      letter-spacing: -0.045em;
+      line-height: 1.1;
+      margin-bottom: 17px;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+    }
+
+    .experience {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 27px 0;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 25px;
+    }
+
+    .role { font-size: 1.2rem; font-weight: 700; }
+    .company { color: var(--accent); margin-top: 3px; }
+    .date { color: var(--muted); font-size: 0.9rem; }
+
+    .experience p {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      min-height: 320px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255,255,255,0.025);
+      transition: 0.22s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: rgba(138,180,255,0.42);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 750;
+      margin-bottom: 35px;
+    }
+
+    .project h3 {
+      font-size: 1.3rem;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .project p { color: var(--muted); font-size: 0.93rem; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: auto;
+      padding-top: 25px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      padding: 5px 9px;
+      border-radius: 6px;
+      color: #c4ccda;
+      font-size: 0.75rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 850px;
+    }
+
+    .skill {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 10px 13px;
+      color: #d2d9e4;
+      font-size: 0.88rem;
+    }
+
+    .education {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .edu-card {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .edu-card h3 { margin-bottom: 5px; }
+    .edu-card p { color: var(--muted); }
+
+    .contact {
+      border-top: 1px solid var(--line);
+      text-align: center;
+      padding: 100px 0 80px;
+    }
+
+    .contact h2 { max-width: 650px; margin: 0 auto 16px; }
+    .contact p { color: var(--muted); }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 28px;
+      color: var(--accent);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+      color: #707b8c;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero { min-height: auto; padding: 90px 0 70px; }
+      .hero-card { max-width: 500px; }
+      .projects { grid-template-columns: 1fr; }
+      .education { grid-template-columns: 1fr; }
+      section { padding: 70px 0; }
+    }
+
+    @media (max-width: 500px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      h1 { font-size: 3.3rem; }
+      .experience { grid-template-columns: 1fr; gap: 4px; }
+      .date { grid-row: 2; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#top">Snehal<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">Quantitative Analyst · Mathematics · Risk</div>
+
+          <h1>
+            Snehal<br />
+            <span>Pophale.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Quantitative Analyst with a background in Mathematics, credit risk,
+            statistical modelling and data. Building toward quantitative finance
+            through rigorous pricing, risk and research projects.
+          </p>
+
+          <div class="buttons">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn" href="https://github.com/Snehalpophale98" target="_blank" rel="noopener">
+              GitHub ↗
+            </a>
+            <!-- Replace the # below with your LinkedIn URL -->
+            <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="formula">dS = μSdt + σSdW</div>
+
+          <div class="stat">
+            <strong>MSc Mathematics</strong>
+            <small>Savitribai Phule Pune University</small>
+          </div>
+
+          <div class="stat">
+            <strong>Quantitative Analytics</strong>
+            <small>Credit Risk · Structured Finance</small>
+          </div>
+
+          <div class="stat">
+            <strong>Current Focus</strong>
+            <small>Derivatives · Risk · Quantitative Research</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-label">01 — About</div>
+        <h2>Mathematics applied to financial problems.</h2>
+
+        <p class="intro">
+          I am a Quantitative Analyst working in credit risk and structured finance,
+          with an MSc in Mathematics. My work sits at the intersection of statistical
+          modelling, financial risk, data and software. I am particularly interested
+          in derivatives, quantitative risk, stochastic models and systematic
+          approaches to financial decision-making.
+        </p>
+
+        <div class="experience">
+          <div>
+            <div class="role">Quantitative Analyst / Credit Analyst</div>
+            <div class="company">CRISIL Limited · Methodologies · Structured Finance</div>
+          </div>
+          <div class="date">Current</div>
+
+          <p>
+            Experience across risk-factor modelling, predictive frameworks,
+            rating transitions, default modelling, Python/R analytics,
+            dashboards and production risk-model workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-label">02 — Quant Projects</div>
+        <h2>Research, pricing & risk engines.</h2>
+
+        <p class="intro">
+          A portfolio designed to demonstrate quantitative finance theory,
+          implementation discipline, numerical methods and model validation.
+        </p>
+
+        <div class="projects">
+
+          <article class="project">
+            <div class="project-number">PROJECT 01</div>
+            <h3>Derivatives Pricing & Hedging Engine</h3>
+            <p>
+              A multi-method derivatives framework covering analytical pricing,
+              lattice methods, Monte Carlo simulation, Greeks, implied volatility,
+              calibration and dynamic hedging.
+            </p>
+            <div class="tags">
+              <span class="tag">Black-Scholes</span>
+              <span class="tag">Binomial</span>
+              <span class="tag">Monte Carlo</span>
+              <span class="tag">Greeks</span>
+              <span class="tag">Volatility</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-number">PROJECT 02</div>
+            <h3>Portfolio Risk & Stress Testing Engine</h3>
+            <p>
+              A portfolio risk framework for Value at Risk, Expected Shortfall,
+              Monte Carlo simulation, factor risk, historical scenarios,
+              stress testing and backtesting.
+            </p>
+            <div class="tags">
+              <span class="tag">VaR</span>
+              <span class="tag">Expected Shortfall</span>
+              <span class="tag">Monte Carlo</span>
+              <span class="tag">Factor Risk</span>
+              <span class="tag">Backtesting</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-number">PROJECT 03</div>
+            <h3>Volatility Modelling Framework</h3>
+            <p>
+              A quantitative research framework exploring volatility estimation,
+              forecasting and model evaluation using EWMA, GARCH and related
+              time-series techniques.
+            </p>
+            <div class="tags">
+              <span class="tag">EWMA</span>
+              <span class="tag">GARCH</span>
+              <span class="tag">Time Series</span>
+              <span class="tag">Forecasting</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-label">03 — Toolkit</div>
+        <h2>Tools I work with.</h2>
+
+        <p class="intro">
+          Quantitative modelling, statistical analysis, programming and financial
+          risk form the core of my technical toolkit.
+        </p>
+
+        <div class="skills">
+          <span class="skill">Python</span>
+          <span class="skill">R</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Statistics</span>
+          <span class="skill">Probability</span>
+          <span class="skill">Time Series</span>
+          <span class="skill">Machine Learning</span>
+          <span class="skill">Monte Carlo</span>
+          <span class="skill">Black-Scholes</span>
+          <span class="skill">Derivatives</span>
+          <span class="skill">Risk Modelling</span>
+          <span class="skill">Credit Risk</span>
+          <span class="skill">PCA</span>
+          <span class="skill">Logistic Regression</span>
+          <span class="skill">XGBoost</span>
+          <span class="skill">R Shiny</span>
+          <span class="skill">Model Validation</span>
+          <span class="skill">Structured Finance</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-label">04 — Education</div>
+        <h2>Mathematical foundation.</h2>
+
+        <div class="education">
+          <div class="edu-card">
+            <h3>MSc Mathematics</h3>
+            <p>Savitribai Phule Pune University</p>
+            <p>2019 — 2021 · CGPA 8.3</p>
+          </div>
+
+          <div class="edu-card">
+            <h3>BSc Mathematics</h3>
+            <p>Nowrosjee Wadia College, Pune</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-label">05 — Contact</div>
+
+        <h2>Interested in quantitative finance, risk or research?</h2>
+
+        <p>
+          Feel free to connect with me or explore my work on GitHub.
+        </p>
+
+        <div class="contact-links">
+          <a href="https://github.com/Snehalpophale98" target="_blank" rel="noopener">
+            GitHub
+          </a>
+          <!-- Replace # with your LinkedIn URL -->
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <!-- Replace # with your email using mailto: -->
+          <a href="#">Email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Snehal Pophale · Built for quantitative finance.
+  </footer>
+
+</body>
+</html>
